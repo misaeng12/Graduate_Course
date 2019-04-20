@@ -32,7 +32,7 @@ ggplot(sample1) +
   theme(plot.title=element_text(hjust=0.5), plot.subtitle=element_text(hjust=0.5))
 ```
 
-![alt text](Data_Mining/Images/Generating_Random_Points1.png)<!-- -->
+![alt text](Images/Generating_Random_Points1.png)<!-- -->
 
 ```r
 sample2 <- data.frame(myftn(1000,3))
@@ -40,7 +40,7 @@ plot_ly(x=sample2$X1, y=sample2$X2, z=sample2$X3, type="scatter3d", mode="marker
         layout(title="N=1000, p=3")
 ```
 
-![alt text](Data_Mining/Images/Generating_Random_Points2.png)<!-- -->
+![alt text](Images/Generating_Random_Points2.png)<!-- -->
 
 
 
