@@ -1,6 +1,5 @@
 ######################################################
-# Metropolis-Hastings Algorithm
-# Example: 예 2.2
+# Metropolis-Hastings Algorithm (Example: 예 2.2)
 ######################################################
 
 theta=c(1:5)
@@ -59,8 +58,7 @@ barplot(aa, names.arg=theta, xlab="theta", ylab="prob", ylim=c(0,0.4), col="sky 
 
 
 ############################################
-# Gibbs Sampling
-# Example : 예 2.3
+# Gibbs Sampling (Example: 예 2.3)
 ############################################
 
 M<-3000; m<-500   # burn-in=500; nTotalIteration=3000
