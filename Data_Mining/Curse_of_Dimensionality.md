@@ -32,7 +32,7 @@ ggplot(sample1) +
   theme(plot.title=element_text(hjust=0.5), plot.subtitle=element_text(hjust=0.5))
 ```
 
-![Alt text](Data_Mining/Images/Generating_Random_Points(p=2).png)
+![](Data_Mining/Images/Generating_Random_Points(p=2).png)
 
 ```r
 sample2 <- data.frame(myftn(1000,3))
