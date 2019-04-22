@@ -6,16 +6,20 @@ library(rjags)
 modelString=" 
 model
 {
+  # 데이터의 분포
   for(i in 1:n){
-    x[i] ~ dnorm( mu, invsigsq)	# 데이터의 분포
+    x[i] ~ dnorm( mu, invsigsq)
   }
 
-  mu ~ dnorm(mu0, invsigsq0)		  # 사전분포
+  # 사전분포
+  mu ~ dnorm(mu0, invsigsq0)
   invsigsq ~ dgamma(a,b)
 
-  sigsq <- 1/invsigsq			        # 모수의 변환
+  # 모수의 변환
+  sigsq <- 1/invsigsq
 
-  mu0<- 10				                  # 상수값 지정
+  # 상수값 지정
+  mu0<- 10
   invsigsq0 <- 1/25
   a<- 0.5
   b<- 1
