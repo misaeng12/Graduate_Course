@@ -10,7 +10,6 @@ rmvnorm<-function(n, mu,Sig){
   return(tt)
 }
 
-setwd("C:/Users/user/Misaeng/수업/2019-1/베이지안통계특론/필기&코드")
 dat=read.csv("immigrants.csv")
 y=dat$wage
 n=length(y)
