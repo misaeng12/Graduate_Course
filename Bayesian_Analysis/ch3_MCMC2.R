@@ -2,7 +2,7 @@ library(coda)
 
 ##### Read Data #####
 n=20; xbar=4; sigma=1
-mu0=0 ; sigma0=10
+mu0=0; sigma0=10
 dataList=list(n=n,xbar=xbar,sigma=sigma, mu0=mu0, sigma0=sigma0)
 
 #### Function To Compute Posterior Kernel ####
