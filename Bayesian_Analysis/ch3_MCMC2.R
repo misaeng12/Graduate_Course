@@ -34,17 +34,15 @@ Metro=function(nsim, mu.init, delta, dataList){
 ##################################################
 
 delta=0.2
-nsim=10000
+nsim=10000; nwarm=500
 n.chains=3
 
 mu.Samples=matrix(0, nsim, n.chains)
 
-for( i in 1:n.chains){
-  mu.init = rnorm(1,mu0,2)
-  mu.Samples[, i]= Metro(nsim-1,mu.init,delta, dataList) 
+for(i in 1:n.chains){
+  mu.init = rnorm(1, mu0, 2)
+  mu.Samples[, i] = Metro(nsim-1, mu.init, delta, dataList) 
 }
-
-nwarm=500; nsim=10000
 
 
 #### Fig3.1 예 3.1에서 3개의 체인에 대한 경로그림 ####
@@ -81,3 +79,19 @@ mu3.Samples=mcmc(mu.Samples[2001:10000,])
 mu3.codaSamples=mcmc.list(list(mu3.Samples[,1],mu3.Samples[,2],mu3.Samples[,3]))
 gelman.plot(mu3.codaSamples, col=c("black", "blue"))
 savePlot(file="figure/Fig_3_3_b_Gelman", type=c("bmp"), device=dev.cur())
+
+
+#### ACF값 ####
+mu.postSamples=as.matrix(mu3.codaSamples)
+aa=acf(mu.postSamples); aa
+
+#### Fig 3.4 예 3.1 표본의 자기상관 그림 ####
+par(mfrow=c(1,1))
+plot(acf(mu.Samples[(nwarm+1):nsim,1]), main="Autocorrelation")
+savePlot(file="figure/Fig_3_4_acf", type=c("bmp"), device=dev.cur())
+
+#### ESS (효용표본수) ####
+mu.postSamples=as.matrix(mu3.codaSamples)
+aa=as.vector(unlist(acf(mu.postSamples)))
+aa=as.numeric(aa[2:17])
+ESS = (nsim-nwarm)/(1+2*sum(aa)); ESS
