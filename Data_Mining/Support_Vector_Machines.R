@@ -1,7 +1,3 @@
-library(ggplot2)
-library(e1071)
-library(ISLR)
-
 ### Exercise 9.4
 
 ## Generating data set
