@@ -5,13 +5,6 @@ plot(hc, hang=-1)
 cutree(hc, 2)
 
 
-## Homework (Chapter10)
-
-# Lab
-# Exercise 7, 10
-# A quick tour of mclust
-
-
 library(ggplot2)
 
 ### Exercise 10.7
@@ -19,7 +12,6 @@ library(ggplot2)
 r <- cor((t(USArrests)))
 Euclidean <- as.matrix(dist(t(scale(t(USArrests)))))^2
 Euclidean/(1-r)
-
 
 
 ### Exercise 10.10
