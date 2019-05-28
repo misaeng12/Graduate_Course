@@ -1,5 +1,3 @@
-setwd("C:/Users/user/Misaeng/수업/2019-1/베이지안통계특론/필기&코드")
-
 #1. Boston Housing 자료의 분위 회귀모형 분석에 잠재변수 기법 적용 후 0-1 기법과 컴퓨팅 시간 비교
 
 #### Boston Data ####
