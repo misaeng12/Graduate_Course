@@ -14,8 +14,6 @@ k <- ncol(X)
 
 # glm()
 glm <- glm(y ~ ., family = binomial, data.frame(y, X[,-1]))
-#table(as.numeric(predict(glm, type="response")>0.5), data$y)
-#table(as.numeric(predict(glm, type="response", test.data)>0.3), test.data$y)
 beta.mle <- glm$coef
 var.beta.mle <- diag(vcov(glm))
 
