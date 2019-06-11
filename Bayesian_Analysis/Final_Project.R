@@ -144,3 +144,6 @@ beta <- matrix(beta.hat, nrow=1); colnames(beta) <- colnames(X); beta
 HPD <- round(apply(MCMCSamples, 2, quantile, probs=c(0.025, 0.975)), 4)
 colnames(HPD) <- colnames(X); HPD
 for(i in 1:k){ ggplot() + geom_density(aes(MCMCSamples[,i])) + xlab(colnames(X)[i]) }
+
+
+
